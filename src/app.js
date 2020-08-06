@@ -5,6 +5,7 @@ const hbs     = require('hbs');
 const geocode = require('../utils/geocode')
 const weather = require('../utils/weather')
 const app = express();
+const port = process.env.PORT || 3000;
 
 // let's use hbs (handlebars extension to work with express ) and also remember to run files of defined view engine you need to have route handlers
 var lat="",long="";
@@ -80,7 +81,7 @@ app.get("*",(req,res)=>{
 
 
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
 
-    console.log("server is up and running on port: 3000");
+    console.log("server is up and running on port:",port);
 })
